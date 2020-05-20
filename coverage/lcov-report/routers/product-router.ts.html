@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for routers/customer-router.ts</title>
+    <title>Code coverage report for routers/product-router.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">routers</a> customer-router.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">routers</a> product-router.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/25</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/25</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -112,10 +112,7 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -126,7 +123,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,24 +164,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import express from 'express';
-import * as customerService from '../services/customer-service';
+import * as productService from '../services/product-service';
 &nbsp;
-export const customerRouter = express.Router();
+export const productRouter = express.Router();
 &nbsp;
 /*
-    http://localhost:3001/customer
-    Retrives an array of all customers in the database
+    http://localhost:3001/product
+    Retrieves an array of all product in the database
 */
-customerRouter.get('', (request, response, next) =&gt; {
-    customerService.getAllCustomers().then(customer =&gt; {
-        response.set('content-type', 'application/json')
-        response.json(customer);
+productRouter.get('', (request, response, next) =&gt; {
+    productService.getAllProducts().then(product =&gt; {
+        response.json(product);
         next();
     }).catch(err =&gt; {
         response.sendStatus(500);
@@ -193,17 +186,17 @@ customerRouter.get('', (request, response, next) =&gt; {
 });
 &nbsp;
 /*
-    http://localhost:3001/customer/:id
-    Retrieves a specified single customer from the database by its Id
-    If the customer does not already exist, then sends 404
+    http://localhost:3001/product/:id
+    Retrieves the product by its id
+    if the product does not exist, then send 40
 */
-customerRouter.get('/:id', (request, response, next) =&gt; {
+productRouter.get('/:id', (request, response, next) =&gt; {
     const id = +request.params.id;
-    customerService.getCustomerById(id).then(customer =&gt; {
-        if(!customer){
+    productService.getProductById(id).then(product =&gt; {
+        if(!product){
             response.sendStatus(404);
         }else {
-            response.json(customer);
+            response.json(product);
         }
         next();
     }).catch(err =&gt; {
@@ -213,23 +206,21 @@ customerRouter.get('/:id', (request, response, next) =&gt; {
 })
 &nbsp;
 /*
-    POST http://localhost:3001/customer
-    Creates a new customer and then saves them into the database.
-    Returns the inserted data as Json with a status of 201.
+    POST http://localhost:3001/product
+    Creates a new product and then saves the product to the database
+    Returns the new product data as JSON with a status of 201.
 */
-customerRouter.post('', (request, response, next) =&gt; {
-    const customer = request.body;
-    customerService.saveCustomer(customer)
-    .then(newCustomer =&gt; {
-        response.status(201);
-        response.json(newCustomer);
-        next();
-    }).catch(err =&gt; {
-     response.sendStatus(500);
-    })
-})
-&nbsp;
-&nbsp;
+ productRouter.post('', (request, response, next) =&gt; {
+     const product = request.body;
+     productService.saveProduct(product)
+     .then(newProduct =&gt; {
+         response.status(201);
+         response.json(newProduct);
+         next();
+     }).catch(err =&gt; {
+        response.sendStatus(500);
+     })
+ })
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
 

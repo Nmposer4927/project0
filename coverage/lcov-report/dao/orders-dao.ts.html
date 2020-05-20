@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for models/Customer.ts</title>
+    <title>Code coverage report for dao/orders-dao.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">models</a> Customer.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">dao</a> orders-dao.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">26.32% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>5/19</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">31.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>5/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,71 +89,71 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export class Customer {
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: number;
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Orders, OrdersRow} from '../models/Orders';
+import { db } from '../dao/db';
 &nbsp;
+// Function to get all Orders
+export function <span class="fstat-no" title="function not covered" >getAllOrders(</span>): Promise&lt;Orders[]&gt; {
+    const sql = <span class="cstat-no" title="statement not covered" >'SELECT * FROM orders';</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    static </span>from(obj: CustomerRow): Customer {
-        const customer = <span class="cstat-no" title="statement not covered" >new Customer(</span>
-            obj.id, obj.first_name, obj.last_name, obj.email, obj.phone
-    );
-<span class="cstat-no" title="statement not covered" >    return customer;</span>
+<span class="cstat-no" title="statement not covered" >    return db.query&lt;OrdersRow&gt;(sql, []).then(<span class="fstat-no" title="function not covered" >result </span>=&gt; {</span>
+        const rows : OrdersRow[] = <span class="cstat-no" title="statement not covered" >result.rows;</span>
+&nbsp;
+        const orders: Orders[] =<span class="cstat-no" title="statement not covered" >rows.map(<span class="fstat-no" title="function not covered" >row </span>=&gt; <span class="cstat-no" title="statement not covered" >Orders.from(row))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        return orders;</span>
+    });
 }
 &nbsp;
-    constructor(id: number, firstName: string, lastName: string, email: string, phone: number) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-    }
+// Function to get Orders by their id
+export function <span class="fstat-no" title="function not covered" >getOrdersById(</span>id:number): Promise&lt;Orders&gt; {
+    const sql = <span class="cstat-no" title="statement not covered" >'SELECT * FROM orders WHERE id=$1';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return db.query&lt;OrdersRow&gt;(sql, [id])</span>
+    .then(<span class="fstat-no" title="function not covered" >result </span>=&gt; <span class="cstat-no" title="statement not covered" >result.rows.map(<span class="fstat-no" title="function not covered" >row </span>=&gt; <span class="cstat-no" title="statement not covered" >Orders.from(row))</span>[0])</span>;
 }
 &nbsp;
-export interface CustomerRow {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-    phone: number;
-}
+// Function to save a new Order
+export function <span class="fstat-no" title="function not covered" >saveOrders(</span>orders: Orders): Promise&lt;Orders&gt; {
+    const sql = <span class="cstat-no" title="statement not covered" >`INSERT INTO orders (order_date, pickup_date) \</span>
+    VALUES ($1, $2) RETURNING *`;
 &nbsp;
-&nbsp;</pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >    return db.query&lt;OrdersRow&gt;(sql, [</span>
+        orders.orderDate,
+        orders.pickupDate
+    ]).then(<span class="fstat-no" title="function not covered" >result </span>=&gt; <span class="cstat-no" title="statement not covered" >result.rows.map(<span class="fstat-no" title="function not covered" >row </span>=&gt; <span class="cstat-no" title="statement not covered" >Orders.from(row))</span>[0])</span>;
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

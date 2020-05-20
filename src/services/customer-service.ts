@@ -1,5 +1,5 @@
 import { Customer } from '../models/Customer';
-import * as customerDao from '../dao/customer-dao'
+import * as customerDao from '../dao/customer-dao';
 
 // Function to retrieve All Customers.
 export function getAllCustomers(): Promise<Customer[]> {
@@ -13,9 +13,7 @@ export function getCustomerById(id: number): Promise<Customer> {
 
 // Function to add new customer to database
 export function saveCustomer(customer: any): Promise<Customer> {
-
-    console.log(customer);
-    // Data from the user cannot be trusted
+       // Data from the user cannot be trusted
     const newCustomer = new Customer(
         undefined, customer.firstName,
         customer.lastName, customer.email,

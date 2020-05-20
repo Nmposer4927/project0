@@ -12,9 +12,7 @@ export function getProductById(id:number): Promise<Product> {
 }
 
 // Function to add a new product to the database
-export function saveProduct(product: Product): Promise<Product> {
-
-    console.log(product);
+export function saveProduct(product: any): Promise<Product> {
 
     const newProduct = new Product(
         undefined, product.plantName, product.price,
@@ -24,7 +22,6 @@ export function saveProduct(product: Product): Promise<Product> {
     if(product.plantName && product.price && product.unitsStocked){
         return productDao.saveProduct(newProduct);
     }else {
-        console.warn('Invalid Product');
         return new Promise((resolve, reject) => reject(422));
     }
 }

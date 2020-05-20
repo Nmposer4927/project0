@@ -12,7 +12,6 @@ productRouter.get('', (request, response, next) => {
         response.json(product);
         next();
     }).catch(err => {
-        console.log(err);
         response.sendStatus(500);
     });
 });
@@ -50,7 +49,6 @@ productRouter.get('/:id', (request, response, next) => {
          response.json(newProduct);
          next();
      }).catch(err => {
-        console.log(err);
         response.sendStatus(500);
      })
  })

@@ -15,6 +15,7 @@ export function getAllCustomers(): Promise<Customer[]> {
     });
 }
 
+
 // Function to get Customers by their id
 export function getCustomerById(id: number): Promise<Customer> {
     const sql = 'SELECT * FROM customer WHERE id=$1';
