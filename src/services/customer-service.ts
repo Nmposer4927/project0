@@ -26,7 +26,6 @@ export function saveCustomer(customer: any): Promise<Customer> {
         // Data is valid - Continue submitting to DAO
         return customerDao.saveCustomer(newCustomer);
     } else {
-        console.warn('Person invalid');
         return new Promise((resolve, reject) => reject(422));
     }
 }

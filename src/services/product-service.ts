@@ -10,3 +10,21 @@ export function getAllProducts(): Promise<Product[]> {
 export function getProductById(id:number): Promise<Product> {
     return productDao.getProductById(id);
 }
+
+// Function to add a new product to the database
+export function saveProduct(product: Product): Promise<Product> {
+
+    console.log(product);
+
+    const newProduct = new Product(
+        undefined, product.plantName, product.price,
+        product.unitsStocked
+    );
+
+    if(product.plantName && product.price && product.unitsStocked){
+        return productDao.saveProduct(newProduct);
+    }else {
+        console.warn('Invalid Product');
+        return new Promise((resolve, reject) => reject(422));
+    }
+}

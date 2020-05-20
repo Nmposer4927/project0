@@ -9,8 +9,6 @@ export function getAllCustomers(): Promise<Customer[]> {
     return db.query<CustomerRow>(sql, []).then(result => {
         const rows: CustomerRow[] = result.rows;
 
-        console.log(rows);
-
         const customer: Customer[] = rows.map(row => Customer.from(row));
         return customer;
 

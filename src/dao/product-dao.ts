@@ -25,4 +25,17 @@ export function getProductById(id: number): Promise<Product> {
 
     return db.query<ProductRow>(sql, [id])
     .then(result => result.rows.map(row => Product.from(row))[0]);
+
+}
+
+// Function to save new product into database
+export function saveProduct(product: Product): Promise<Product> {
+    const sql = `INSERT INTO product (plant_name, price, units_stocked) \
+    VALUES ($1, $2, $3) RETURNING *`;
+
+    return db.query<ProductRow>(sql, [
+        product.plantName,
+        product.price,
+        product.unitsStocked
+    ]).then(result => result.rows.map(row => Product.from(row))[0]);
 }

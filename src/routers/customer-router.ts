@@ -9,10 +9,10 @@ export const customerRouter = express.Router();
 */
 customerRouter.get('', (request, response, next) => {
     customerService.getAllCustomers().then(customer => {
+        response.set('content-type', 'application/json')
         response.json(customer);
         next();
     }).catch(err => {
-        console.log(err);
         response.sendStatus(500);
     });
 });
@@ -50,8 +50,7 @@ customerRouter.post('', (request, response, next) => {
         response.json(newCustomer);
         next();
     }).catch(err => {
-        console.log(err);
-        response.sendStatus(500);
+     response.sendStatus(500);
     })
 })
 

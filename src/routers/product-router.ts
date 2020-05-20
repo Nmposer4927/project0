@@ -37,3 +37,21 @@ productRouter.get('/:id', (request, response, next) => {
     })
 })
 
+/*
+    POST http://localhost:3001/product
+    Creates a new product and then saves the product to the database
+    Returns the new product data as JSON with a status of 201.
+*/
+ productRouter.post('', (request, response, next) => {
+     const product = request.body;
+     productService.saveProduct(product)
+     .then(newProduct => {
+         response.status(201);
+         response.json(newProduct);
+         next();
+     }).catch(err => {
+        console.log(err);
+        response.sendStatus(500);
+     })
+ })
+
