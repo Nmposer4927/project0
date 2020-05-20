@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1589951016321" clover="3.2.0">
-  <project timestamp="1589951016321" name="All files">
-    <metrics statements="179" coveredstatements="131" conditionals="21" coveredconditionals="20" methods="72" coveredmethods="35" elements="272" coveredelements="186" complexity="0" loc="179" ncloc="179" packages="4" files="13" classes="13"/>
+<coverage generated="1589971902116" clover="3.2.0">
+  <project timestamp="1589971902116" name="All files">
+    <metrics statements="179" coveredstatements="132" conditionals="21" coveredconditionals="20" methods="72" coveredmethods="35" elements="272" coveredelements="187" complexity="0" loc="179" ncloc="179" packages="4" files="13" classes="13"/>
     <package name="dao">
-      <metrics statements="51" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="27" coveredmethods="0"/>
+      <metrics statements="50" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="27" coveredmethods="0"/>
       <file name="customer-dao.ts" path="C:\Users\nmpos\Documents\Project_0\src\dao\customer-dao.ts">
         <metrics statements="16" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
@@ -45,10 +45,10 @@
         <line num="25" count="2" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
       </file>
       <file name="product-dao.ts" path="C:\Users\nmpos\Documents\Project_0\src\dao\product-dao.ts">
-        <metrics statements="17" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <metrics statements="16" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
@@ -56,20 +56,19 @@
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
       </file>
     </package>
     <package name="models">
-      <metrics statements="21" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+      <metrics statements="22" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
       <file name="Customer.ts" path="C:\Users\nmpos\Documents\Project_0\src\models\Customer.ts">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
@@ -82,13 +81,14 @@
         <line num="21" count="7" type="stmt"/>
       </file>
       <file name="Orders.ts" path="C:\Users\nmpos\Documents\Project_0\src\models\Orders.ts">
-        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="1" count="3" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="15" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
         <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
       </file>
       <file name="Product.ts" path="C:\Users\nmpos\Documents\Project_0\src\models\Product.ts">
         <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>

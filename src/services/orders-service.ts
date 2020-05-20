@@ -14,7 +14,7 @@ export function getOrdersById(id: number): Promise<Orders> {
 // Function to add new order to database
 export function saveOrders(orders: any): Promise<Orders> {
     const newOrders = new Orders(
-        undefined, orders.orderDate, orders.pickupDate
+        undefined, orders.orderDate, orders.pickupDate, orders.customerId
     );
     if(orders.orderDate && orders.pickupDate){
         return ordersDao.saveOrders(newOrders);

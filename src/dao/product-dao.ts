@@ -10,8 +10,6 @@ export function getAllProducts(): Promise<Product[]> {
     return db.query<ProductRow>(sql, []).then(result => {
         const rows: ProductRow[] = result.rows;
 
-        console.log(rows);
-
         const product: Product[] = rows.map(row => Product.from(row));
         return product;
     });

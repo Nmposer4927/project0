@@ -1,4 +1,4 @@
-import { Orders, OrdersRow} from '../models/Orders';
+import { Orders, OrdersRow } from '../models/Orders';
 import { db } from '../dao/db';
 
 // Function to get all Orders
@@ -23,11 +23,14 @@ export function getOrdersById(id:number): Promise<Orders> {
 
 // Function to save a new Order
 export function saveOrders(orders: Orders): Promise<Orders> {
-    const sql = `INSERT INTO orders (order_date, pickup_date) \
-    VALUES ($1, $2) RETURNING *`;
+    const sql = `INSERT INTO orders (order_date, pickup_date, customer_Id) \
+    VALUES ($1, $2. $3) RETURNING *`;
 
     return db.query<OrdersRow>(sql, [
         orders.orderDate,
-        orders.pickupDate
+        orders.pickupDate,
+        orders.customerId
     ]).then(result => result.rows.map(row => Orders.from(row))[0]);
 }
+
+

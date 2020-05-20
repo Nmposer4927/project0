@@ -14,7 +14,8 @@ describe('saveOrders', () => {
         });
 
         const payload = {
-            pickupDate: '2000-05-05'
+            pickupDate: '2000-05-05',
+            customerId: 4
 
         };
 
@@ -33,7 +34,9 @@ describe('saveOrders', () => {
         });
 
         const payload = {
-            orderDate: '2000-05-05'
+            orderDate: '2000-05-05',
+            customerId: 4
+
 
         };
 
@@ -51,6 +54,7 @@ describe('saveOrders', () => {
         const payload = {
             orderDate: '2020-05-16',
             pickupDate: '2020-05-20',
+            customerId: 4
         };
 
         // The input was not a customer but here is tranformed and returned as Customer
@@ -66,6 +70,7 @@ describe('saveOrders', () => {
             id: 3,
             orderDate: '2020-05-16',
             pickupDate: '2020-05-20',
+            customerId: 4
         };
 
         const outcome = await orderService.saveOrders(payload);
@@ -79,6 +84,7 @@ describe('saveOrders', () => {
         const payload = {
             orderDate: '2020-05-16',
             pickupDate: '2020-05-20',
+            customerId: 4,
             isOnTime: true
         };
 
